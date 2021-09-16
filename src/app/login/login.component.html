@@ -1,0 +1,62 @@
+<div class="outer">
+    <div class="inner">
+        <div class="div-form">
+            <div class="FunDooNotes">
+                <div class="array">
+                    <div class="headerarray" *ngFor="let fontcolor of fontcolors,let i=index">
+                        <h1 class="headerName" [style]=fontcolor>{{fontletters[i]}}</h1>
+                    </div>
+                </div>
+                <!-- <div>
+                    <span class="color-fundoo" style="color:#4285F4">F</span>
+                    <span class="color-fundoo" style="color:#EA4335">u</span>
+                    <span class="color-fundoo" style="color:#FBBC05">n</span>
+                    <span class="color-fundoo" style="color:#4285F4">D</span>
+                    <span class="color-fundoo" style="color:#34A853">o</span>
+                    <span class="color-fundoo" style="color:#EA4335">o</span>
+                </div> -->
+                <div class="inside-header">
+                    <p>Sign in</p>
+                </div>
+                <span class="create">Use your FunDoo Account</span>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="email-form-item">
+                    <mat-form-field class="username" appearance="outline">
+                    <mat-label >Email or phone</mat-label>
+                    <input matInput placeholder="" formControlName="email" required/>
+                    <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <mat-hint *ngIf="f.email.errors.required">!Email is required</mat-hint>
+                        <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                    </mat-hint>
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="outline" class="password" fxLayout="column wrap">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="password" formControlName="password">
+                    <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <mat-hint *ngIf="f.password.errors.required">!Password is required</mat-hint>
+                    <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters</mat-hint>
+                    </mat-hint>
+                </mat-form-field>
+                <div>
+                <a class="e-desc" routerLink="/forget-password">Forgot email?</a>
+                </div>
+                <div class="desc">
+                    <p>Not your computer? Use Guest mode to sign in privately.</p>
+                    <div class="d-desc">
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="login">
+                        <a routerLink="/registration">Create account</a>
+                    </div>
+                    <div class="submit-btn"> 
+                        <button class="click" type="submit" mat-raised-button (click)="onSubmit()"><a>Next</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

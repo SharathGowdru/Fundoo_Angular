@@ -1,0 +1,121 @@
+.outer{
+    overflow: hidden;
+    padding: 30px;
+    width: 380px;
+    margin: auto;
+    margin-top: 60px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    height: 500px;
+}
+.inner{
+    border: 10px;
+}
+.FunDooNotes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    padding-top: 15px;
+}
+.array{
+    display: flex;
+    flex-direction: row; 
+}
+.inside-header{
+    padding-top: 25px;
+}
+.create{
+    font-size: 1rem;
+    padding-top: 12px;
+}
+.email-form-item{
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.password{
+    width: 100%;
+}
+.e-desc{
+    margin-top: -18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.e-desc a{
+    color: #4285F4;
+}
+.desc{
+    padding-top: 50px;
+}
+.d-desc{
+    font-weight: bold;
+    margin-top: -15px;
+    text-decoration: none;
+}
+.d-desc a{
+    color: #4285F4;
+}
+.btns{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.login{
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 10px;
+}
+.login a{
+    color: #4285F4;
+}
+.btns{
+    margin-top: 25px;   
+}
+.submit-btn a{
+    color: white;
+}
+.submit-btn .click{
+    background-color:#3574da;
+}
+.lang{
+    padding-top: 20px;
+    width: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.language{
+    width: 50%;
+    margin-left: -25px;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-right: -30px;
+}
+.menu a{
+    color: black;
+    text-decoration: none;
+}
+@media (max-width : 400px){
+    .outer{
+        margin-top: 0;
+        margin-left: -10px;
+        border: none;
+        width: 290px;
+        justify-content: center;
+    }
+}
+@media (max-width : 450px){
+    .outer{
+        margin-top: 0;
+        margin-left: -10px;
+        border: none;
+        width: 370px;
+        justify-content: center;
+    }
+}
