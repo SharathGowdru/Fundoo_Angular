@@ -1,0 +1,252 @@
+.outer{
+    overflow: hidden;
+    padding: 30px;
+    width: 650px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+}
+  
+.inner{
+    display: flex;
+    flex-direction: row
+}
+
+.color-fundoo{
+    font-weight: 550;
+    font-size: 15pt;
+    font-family: sans-serif;
+}
+
+.create{
+    font-size: 24px;
+    font-weight: 400;
+    color: #202124;
+    font-weight: 400;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+}
+.RegisterForm{
+  
+    display: inline-block;
+    font-size: 15px;
+    padding: 30px 0 0;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%; 
+}
+  
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    width: 354px;
+}
+.name-l{
+    padding-left: 8px;
+}
+.email-form-item p{
+    font-size: small;
+    padding-left: 8px;
+    
+}
+.username{
+    width: 100%;  
+}
+.email-desc{
+    margin-top: -20px;
+}
+.detail{
+    text-decoration: none;
+}
+.detail a{
+    color: #4285F4;
+}
+.Password{
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+.pword{
+    padding-left: 8px;
+}
+.desc p{
+    font-size: small;
+}
+.c-desc{
+    padding-top: 15px;
+    padding-left: 10px;
+}
+.btns{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.login a{
+    color: #4285F4;
+}
+.submit-btn a{
+    color: white;
+}
+.div-form{
+    display:inline-block;
+    justify-content: flex-start;
+    padding: 16px;
+}
+
+.div-icon{
+    margin: auto;
+    display:inline-block;
+    margin-top: 60px;
+}
+.dash-span{
+    padding-left: 30px;
+}
+.d-span{
+    padding-left: 50px;
+}
+.lang{
+    padding-top: 20px;
+    width: 650px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.language{
+    width: 50%;
+    margin-left: -25px;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-right: -30px;
+}
+.menu a{
+    color: black;
+}
+.submit-btn .click{
+    background-color:#4285F4
+}
+  
+@media (max-width : 900px){
+    .div-icon{
+        display: none;
+    }  
+    .outer{
+        width: max-content;
+        padding: 48px 40px 36px;
+    }
+    .lang{
+        width: 470px;
+    }
+    
+  }  
+@media (max-width : 450px) {
+    .outer{
+        border: none;
+        margin-top: auto;
+        padding: 0;
+        width: 100%;
+    }
+    .inner{
+        margin: 10px;
+        width: 100vw;
+        padding: 0 0 0 0;
+    }
+    .fname{
+        margin-top: 25px;
+        width: 260px;
+    }
+    .lname{
+        width: 260px;
+    }
+    .create{
+        font-size: 15px;
+    }
+}
+@media (max-width : 600px){
+    .outer{
+        border: none;
+        margin: auto;
+        padding: 0;
+        width: 100%;
+    }
+    .inner{
+        margin: 10px;
+        width: max-content;
+        padding: 0 0 0 0;
+    }
+    .create{
+        font-size: 22px;
+    }
+    .name{
+        flex-direction: column;
+        width: 100%;
+  
+    }
+    .name-l{
+        padding-left: 0;
+    }
+    .fname{
+        margin-top: 25px;
+        width: 300px;
+    }
+    .lname{
+        width: 300px;
+    }
+    .name-f{
+        margin-right: 0px;
+    }
+    .username{
+        width: 300px;
+    }
+    .Password{
+        flex-direction: column;
+        width: 100%;
+    }
+    .pword{
+        padding-left: 0;
+        width: 300px;
+    }
+    .m-pword{
+        width: 300px;
+    }
+    .desc p{
+        font-size: 12px;
+    }
+    .div{
+        margin: auto;
+    }
+    .lang{
+        width: 300px;
+    }
+}
+// @media (max-width : 900px){
+//     .outer{
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         margin-top: 200px;
+//     }
+// }
+// @media (max-width : 1100px){
+//     .outer{
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         margin-top: 350px;
+//     }
+// }
+@media (max-width : 330px){
+    .outer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+    }
+}

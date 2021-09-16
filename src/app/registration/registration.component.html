@@ -1,0 +1,111 @@
+<div class="outer">
+    <div class="inner">
+        <div class="div-form">
+            <div class="FunDooNotes">
+                <!-- <div *ngFor= "let value of header">
+                    <div>{{value.letter}}</div>
+                </div> -->
+                <div>
+                    <span class="color-fundoo" style="color:#4285F4">F</span>
+                    <span class="color-fundoo" style="color:#4285F4">un</span>
+                    <span class="color-fundoo" style="color:#EA4335">doo</span>
+                    <span class="color-fundoo" style="color:#FBBC05">n</span>
+                    <span class="color-fundoo" style="color:#4285F4">o</span>
+                    <span class="color-fundoo" style="color:#34A853">t</span>
+                    <span class="color-fundoo" style="color:#EA4335">e</span>
+                    <span class="color-fundoo" style="color:#4285F4">s</span>
+                </div>
+                <br>
+                <span class="create">Create your FunDoo Account</span>
+            </div>
+            
+            <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                <div  class="form-container"> 
+                    <div class="name form-item ">
+                        <div class="name-f">
+                            <mat-form-field class="fname" appearance="outline">
+                            <mat-label >First Name</mat-label>
+                            <input matInput placeholder="" formControlName="firstName" >
+                            <mat-hint *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <mat-hint *ngIf="f.firstName.errors.required">!First Name is required</mat-hint>
+                            </mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="name-l">
+                            <mat-form-field class="lname" appearance="outline">                           
+                            <mat-label >Last Name</mat-label>
+                            <input matInput placeholder="" formControlName="lastName">
+                            <mat-hint *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <mat-hint *ngIf="f.lastName.errors.required">!Last Name is required</mat-hint>
+                            </mat-hint>
+                            </mat-form-field>
+                        </div>   
+                    </div>
+                
+                    <div class="email-form-item">
+                        <mat-form-field class="username" appearance="outline">
+                        <mat-label >Username</mat-label>
+                        <input matInput placeholder="" formControlName="email" >
+                        <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.email.errors.required">!Email is required</mat-hint>
+                            <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                        </mat-hint>
+                        </mat-form-field>
+                        <div class="email-desc">
+                            <p>You can use letters,numbers & periods</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <a href="#" style="color: #4285F4;" >Use my current email address instead</a>
+                    </div>
+                        
+                    <div class="Password">
+                        <div class="new-p">
+                            <mat-form-field class="m-pword" appearance="outline">
+                                <mat-label >Password</mat-label>
+                                <input matInput placeholder="" formControlName="password" >
+                                <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <mat-hint *ngIf="f.password.errors.required">!Password is required</mat-hint>
+                                    <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                    </mat-hint>
+                                </mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="confirm-p">
+                            <mat-form-field class="pword" appearance="outline">
+                            <mat-label >Confirm</mat-label>
+                            <input matInput placeholder="" formControlName="confirmPassword" >
+                            <mat-hint *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                <mat-hint *ngIf="f.confirmPassword.errors.required">!Confirm Password is required</mat-hint>
+                            </mat-hint>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="desc"><p>Use 8 or more characters with a mix of letters,numbers & <br>symbols</p></div>
+
+                    <div class="check">
+                        <mat-checkbox class="c-box" appearance="outline">
+                            <div class="c-desc"><p>Show password</p></div>
+                        </mat-checkbox>
+                    </div>
+                    
+                    <div class="btns">
+                        <div class="login">
+                            <a href="#" style="color: #4285F4;" >Sign in instead</a>
+                        </div>
+                        <div class="submit-btn"> 
+                            <button type="submit" style="background-color:#4285F4" mat-raised-button (click)="onSubmit()" ><a>Next</a></button>
+                        </div>
+                    </div>
+                </div> 
+            </form>               
+        </div>
+        <div class="div-icon">
+            <div class="dash">
+            <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244" height="244" class="j9NuTc TrZEUc">
+            <span class="dash-span">One account. All of FunDoo<br></span>
+            <span class="d-span">working for you.</span>
+        </div>
+    </div>
+</div>
+</div>
