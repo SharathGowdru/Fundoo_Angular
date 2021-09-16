@@ -5,13 +5,70 @@
     overflow-y: hidden;
     
 }
-.logo{
-    display: flex;
-    flex-direction: row;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
 }
-.image{
-    font-size: 1.5rem;
+mat-icon {
+    opacity: 70%;
+}
+button:hover {
+    background-color: rgb(226, 226, 226);
+}
+mat-toolbar {
+    background-color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    
+    .search {
+        width: 50%;
+        border-style: none;
+        background-color: #f1f3f4;      
+    }
+    
+    button {
+        width: 50px;
+        height: 50px;
+        border-color: transparent;
+        border-radius: 50%;   
+    }
+    
+    .logo {
+        margin-right: 10px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        font-size: large;
+        grid-area: logo;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+    }
+    
+    .x{
+        font-size: xx-large;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .searchbar {
+        background-color: #f1f3f4;
+        width: 50%;
+        border-radius: 10px;
+    
+        input {
+            background-color: #f1f3f4;
+            border-style: none;
+            font-size: medium;
+            width: match-parent;
+            padding: 6px 0px;
+            text-align:left;      
+        }
+    }
+    .profilepic:hover {
+        opacity: 70%;
+        cursor: pointer;
+    }
 }
- 
+  

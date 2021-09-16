@@ -1,22 +1,43 @@
 <div class="body">
-    <div class="toolbar" style="display: flex">
-        <button mat-icon-button >
-            <mat-icon>menu</mat-icon>
-        </button>
-        <div class="logo">
-            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="">
-            <div class="image"><p>FunDoo</p></div>    
-        </div>
-        <div class="center searchBar ">
-            <div class="container">
-                <button class="button" >
-                    <mat-icon>search</mat-icon>
-                </button>
+    <mat-toolbar>
+        <div class="toolbar" style="display: flex">
+            <button mat-icon-button (click)="toggleSidebar()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="logo">
+                <div>
+                    <span class="color-fundoo-F" style="color:#4285F4">F</span>
+                    <span class="color-fundoo" style="color:#4285F4">un</span>
+                    <span class="color-fundoo" style="color:#EA4335">doo</span>
+                    <span class="color-fundoo" style="color:#FBBC05">n</span>
+                    <span class="color-fundoo" style="color:#4285F4">o</span>
+                    <span class="color-fundoo" style="color:#34A853">t</span>
+                    <span class="color-fundoo" style="color:#EA4335">e</span>
+                    <span class="color-fundoo" style="color:#4285F4">s</span>
+                </div>
             </div>
-            <input type="text" placeholder="Search" style="background-color: transparent">
         </div>
-    </div>
-</div>
-        
   
- 
+        <div class="searchbar">
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+            <input type="text"  placeholder="Search" />
+        </div>
+        <div class="refresh" style="display: flex; align-items: center">
+            <button mat-icon-button>
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="material-icons-outlined">view_agenda</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="settings_outline">settings_outline</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-left: 20px">
+                <mat-icon>apps</mat-icon>
+            </button>
+                <img class="profilepic" src=""style="width: 40px; height: 40px; border-radius: 50%; margin-left: 5px" alt="pic" />
+        </div>
+    </mat-toolbar>
+</div>
