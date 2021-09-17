@@ -13,9 +13,10 @@ import { UserService} from 'src/app/Services/user.service';
 export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
-  // show: boolean = false;
+
 
   constructor(private formBuilder: FormBuilder, private user: UserService, public snackBar: MatSnackBar) { }
+   
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -25,11 +26,15 @@ export class RegistrationComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      service: "advance"
+      service: ['advance', Validators.required]
     })
   }
 
-  get f() { return this.registerForm.controls }
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
+
+  fontcolors=['color:blue','color:red','color:#orange','color:blue','color:green','color:red'];
+  fonttexts=['F','u','n','d','o','o'];
 
   onSubmit() {
     console.log("onSubmit method is calling",this.registerForm.value)
@@ -39,16 +44,17 @@ export class RegistrationComponent implements OnInit {
     } 
     else {
       console.log(" it is valid")
-      let data={
+      let reqPay={
 
         firstName:this.registerForm.value.firstName,
         lastName:this.registerForm.value.lastName,
         email:this.registerForm.value.email,
         password:this.registerForm.value.password,
+        confirmPassword:this.registerForm.value.confirmPassword,
         service:this.registerForm.value.service
 
       }
-      this.user.register(data).subscribe(response =>{
+      this.user.register(reqPay).subscribe(response =>{
         console.log(response);
         this.snackBar.open("Registered!!!"," ",{ duration: 2000});
       }, error => {
