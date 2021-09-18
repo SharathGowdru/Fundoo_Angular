@@ -5,7 +5,13 @@
                 <mat-icon>menu</mat-icon>
             </button>
             <div class="logo">
-                <div>
+                <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="">
+                <div class="array">
+                    <div class="headerarray" *ngFor="let fontcolor of fontcolors,let i=index">
+                        <h1 class="headerName" [style]=fontcolor>{{fontletters[i]}}</h1>
+                    </div>
+                </div>
+                <!-- <div>
                     <span class="color-fundoo-F" style="color:#4285F4">F</span>
                     <span class="color-fundoo" style="color:#4285F4">un</span>
                     <span class="color-fundoo" style="color:#EA4335">doo</span>
@@ -14,7 +20,7 @@
                     <span class="color-fundoo" style="color:#34A853">t</span>
                     <span class="color-fundoo" style="color:#EA4335">e</span>
                     <span class="color-fundoo" style="color:#4285F4">s</span>
-                </div>
+                </div> -->
             </div>
         </div>
   
@@ -37,7 +43,59 @@
             <button mat-icon-button style="margin-left: 20px">
                 <mat-icon>apps</mat-icon>
             </button>
-                <img class="profilepic" src=""style="width: 40px; height: 40px; border-radius: 50%; margin-left: 5px" alt="pic" />
+            <div fxLayout="row" fxLayoutAlign="space-around" ngClass="log-out-icon">
+                <button mat-mini-fab color="" matTooltip="Log Out" mat-icon-button [matMenuTriggerFor]="profile">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+          
+                <mat-menu #profile="matMenu">
+          
+                    <mat-card-header>
+                        <img mat-card-avatar src="https://lh3.googleusercontent.com/ogw/ADea4I7kgKth06_0t6UTrCLxcYslsR9p-7Akdvi-Q-NcdA=s32-c-mo" class="img2" style="margin-left: 35px;">
+                    </mat-card-header>
+                    <button mat-icon-button (click)=logout() style="margin-left: 18px;">
+                        <mat-icon class="material-icons-outlined">logout</mat-icon>
+                    </button>
+                    <p>Logout</p>
+                </mat-menu>
+            </div>
         </div>
     </mat-toolbar>
+
+    <mat-divider style="margin-bottom: 10px"></mat-divider>
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" [opened]="opened">
+            <div class="link">
+                <button mat-icon-button>
+                    <mat-icon>lightbulb_outline</mat-icon>
+                </button>
+                <p>Notes</p>
+            </div>
+            <div>
+                <button mat-icon-button>
+                    <mat-icon>notifications_none</mat-icon>
+                </button>
+                <p>Reminders</p>
+            </div>
+            <div>
+                <button mat-icon-button>
+                    <mat-icon class="material-icons-outlined">edit</mat-icon>
+                </button>
+                <p>Edit labels</p>
+            </div>
+            <div>
+                <button mat-icon-button>
+                    <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
+                </button>
+                <p>Archive</p>
+            </div>
+            <div>
+                <button mat-icon-button>
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+                <p>Trash</p>
+            </div>  
+        </mat-sidenav>
+    </mat-sidenav-container>
 </div>
