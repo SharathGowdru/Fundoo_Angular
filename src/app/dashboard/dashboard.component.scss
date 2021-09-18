@@ -114,8 +114,8 @@ mat-sidenav-content {
     background-color: rgb(69, 69, 69);
 }
 
-@media ( max-width : 350px ) {
-    mat-toolbar{
-       min-width: none;
-    }
-}
+// @media ( max-width : 350px ) {
+//     mat-toolbar{
+//        min-width: 100px;
+//     }
+// }
