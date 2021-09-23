@@ -1,40 +1,73 @@
 <div  class="head-center">
     <mat-accordion class="example-headers-align" multi>
-        <mat-expansion-panel  hideToggle   [style.background-color] = "colorData" >
-          <mat-expansion-panel-header class="header" [style.background-color] = "colorData" >
-            <mat-panel-title>
-                <form [formGroup]="form" (ngSubmit)="submit()" id="my-form"> 
-                    <div style="width: 600px;">
-                        <div style="display: flex; align-items: flex-end; justify-content: space-between;" [style.background-color] = "colorData">
-                            <div >
-                                <input [style.background-color] = "colorData" class="searchInput" type="text" placeholder="Title" formControlName="titleText" >
-                            </div>
-                            <mat-panel-description>
-                                <span class="material-icons" style="padding-left: 2rem;color:grey; justify-content: center;">
-                                    check_box
-                                </span>
-                                <span class="material-icons" style="padding-left: 2rem;color:grey;">
-                                     image
-                                </span>      
-                            </mat-panel-description>
-                        </div>                        
-                    </div>
-                </form>
-            </mat-panel-title>
+        <mat-expansion-panel  hideToggle>
+          	<mat-expansion-panel-header class="header">
+            	<mat-panel-title>
+                	<form [formGroup]="form" (ngSubmit)="submit()" id="my-form"> 
+                    	<div style="width: 555px;">
+                        	<div style="display: flex; align-items: flex-end; justify-content: space-between;" >
+                            	<div >
+                                	<textarea input class="searchInput" type="text" placeholder="Title" formControlName="titleText" ></textarea>
+                            	</div>
+                            	<mat-panel-description>
+                                	<span class="material-icons" style="padding-left: 2rem;color:grey; justify-content: center;">
+                                    	check_box
+                                	</span>
+                                	<span class="material-icons" style="padding-left: 2rem;color:grey;">
+                                     	image
+                                	</span>      
+                            	</mat-panel-description>
+                        	</div>                        
+                    	</div>
+                	</form>
+            	</mat-panel-title>
             
-          </mat-expansion-panel-header>
-          <form [formGroup]="form"  >
-            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
-              <!--<mat-label></mat-label>-->
-              <input matInput placeholder="Take a note.." formControlName="notesText" >
-            </mat-form-field>
-          <!--Icon element-->
-            <mat-action-row class="footer" style="display: flex; justify-content: space-between;" >
-                <app-icons (transColor)="receiveIconColor($event)" style="width: 60%;"></app-icons>
-                <button mat-button  type="submit" form="my-form"  >Close</button>
-            </mat-action-row>
-          </form>
-          
+          		</mat-expansion-panel-header>
+
+        	<form [formGroup]="form">
+
+	            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+    	          <!--<mat-label></mat-label>-->
+        	      	<textarea input matInput placeholder="Take a note.." formControlName="notesText" ></textarea>
+            	</mat-form-field>
+
+         		 <!--Icon element-->
+            	<mat-action-row class="footer" style="display: flex; justify-content: space-between;" >
+					<div style="display: flex; justify-content: space-around; align-items: center; height: 20%;">
+						<!-- Alert icon -->
+						<button mat-icon-button>
+							<mat-icon>add_alert</mat-icon>
+						</button>
+						
+						<!-- person icon -->
+						<button mat-icon-button>
+							<mat-icon >perm_identity</mat-icon>
+						</button>
+					
+						<!-- color pallate icon -->
+						<button mat-icon-button>
+								<mat-icon>color_lens</mat-icon>
+						</button>
+						
+						<!-- insert photo icon -->
+						<button mat-icon-button>
+							<mat-icon> insert_photo</mat-icon>
+						</button>
+						
+						<!-- archive  icon -->
+						<button mat-icon-button>
+							<mat-icon >archive</mat-icon>
+						</button>
+					
+						<!-- more icon -->
+						<button mat-icon-button>
+							<mat-icon>more_vert</mat-icon>
+						</button>
+
+						<button class="last" mat-button  (click)="accordion.closeAll()" form="my-form">Close</button>
+					</div>
+				</mat-action-row>
+			</form>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
