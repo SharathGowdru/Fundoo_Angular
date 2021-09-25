@@ -1,0 +1,50 @@
+<div class="container">
+    <div *ngFor="let card of cardArray">
+        <mat-card class="card" >
+            <div class="main"(click)="openDialog()">
+                <div class="title">
+                    <h2>{{card.title}}</h2>
+                </div>
+                <div class="description">
+                    <p>{{card.description}}</p>
+                </div>
+            </div>
+            <div class="icons" style="display: flex; justify-content: space-between;  height: 15%;">
+                <!-- Alert icon -->
+                <button mat-icon-button>
+                    <mat-icon>add_alert</mat-icon>
+                </button>
+                
+                <!-- person icon -->
+                <button mat-icon-button>
+                    <mat-icon >perm_identity</mat-icon>
+                </button>
+            
+                <!-- color pallate icon -->
+                <button mat-icon-button>
+                        <mat-icon>color_lens</mat-icon>
+                </button>
+                
+                <!-- insert photo icon -->
+                <!-- <button mat-icon-button>
+                    <mat-icon> insert_photo</mat-icon>
+                </button> -->
+                
+                <!-- archive  icon -->
+                <button mat-icon-button>
+                    <mat-icon >archive</mat-icon>
+                </button>
+            
+                <!-- more icon -->
+                <button mat-icon-button [matMenuTriggerFor] = "belowMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                    <mat-menu #belowMenu="matMenu" yPosition="below">    
+                        <div class="deleteButton" mat-stroked-button >Delete note</div>
+                    </mat-menu>
+      
+        </div>
+        <!-- <div class="close">Close</div> -->
+        </mat-card>
+    </div>
+</div>
