@@ -1,0 +1,37 @@
+.card{
+    width: 500px;
+    height: 100px;
+    justify-content: center;
+    border: none;
+    box-shadow: none;
+}
+.main{
+    outline: none;
+    border: none;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    // width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    // padding: 0 45px 0 10px;
+    outline: none;
+}
+.notes-description{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.close{
+    cursor: pointer;
+    margin-top: 2%;
+}
+.title-top{
+    outline: none;
+    width: 90%;
+    height: 30px;
+    // margin-left: 5px;
+    border: none;
+}
