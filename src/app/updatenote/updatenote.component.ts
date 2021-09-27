@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { NotesService } from '../Services/noteservice.service';
 
 @Component({
   selector: 'app-updatenote',
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./updatenote.component.scss']
 })
 export class UpdatenoteComponent implements OnInit {
+  title:any
+  description:any
 
-  constructor() { }
+  constructor( private noteService:NotesService,
+    public dialogRef: MatDialogRef<UpdatenoteComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+
+      this.title=data.title
+      this.description=data.description
+    }
 
   ngOnInit(): void {
   }
 
+  updateNotes(){
+
+    let request ={
+      noteId: this.data.id,
+      title: this.title,
+      description: this.description
+    }
+      // console.log(request);
+      this.noteService.updateNote(request).subscribe((result)=>{
+      console.log(result);
+      this.dialogRef.close();
+    })
+  }
 }
