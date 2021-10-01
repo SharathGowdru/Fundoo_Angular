@@ -1,46 +1,19 @@
     <div class="container">
-        <!-- <div *ngFor="let card of cardArray"> -->
-            <mat-card class="card" >
+        
+            <mat-card class="card"  [style.background]="notes?.color">
                 <div class="main">
                     <div class="title">
-                        <input class="title-top" placeholder="Title"  [(ngModel)]="title">
+                        <textarea class="title-top" placeholder="Title"  [(ngModel)]="title"></textarea>
                     </div>
                     <div class="description">
-                        <input placeholder="Take a note..." class="notes-description"  [(ngModel)]="description">
+                        <textarea placeholder="Take a note..." class="notes-description"  [(ngModel)]="description"></textarea>
                     </div>
                 </div>
                 <div class="icons" style="display: flex; justify-content: space-between;  height: 15%;">
-                    <!-- Alert icon -->
-
-                    <button mat-icon-button>
-                        <mat-icon>add_alert</mat-icon>
-                    </button>
-                    
-                    <!-- person icon -->
-                    <button mat-icon-button>
-                        <mat-icon >perm_identity</mat-icon>
-                    </button>
-                
-                    <!-- color pallate icon -->
-                    <button mat-icon-button>
-                            <mat-icon>color_lens</mat-icon>
-                    </button>
-                    
-                    <!-- archive  icon -->
-                    <button mat-icon-button>
-                        <mat-icon >archive</mat-icon>
-                    </button>
-                
-                    <!-- more icon -->
-                    <button mat-icon-button [matMenuTriggerFor] = "belowMenu">
-                        <mat-icon>more_vert</mat-icon>
-                    </button>
-                    <mat-menu #belowMenu="matMenu" yPosition="below">    
-                        <div class="deleteButton" mat-stroked-button >Delete note</div>
-                    </mat-menu>
+                  
+                    <app-icons [notecard]="notes"></app-icons>
 
                     <div class="close" (click)="updateNotes()">Close</div>
                 </div>
             </mat-card>
-        <!-- </div> -->
     </div>
