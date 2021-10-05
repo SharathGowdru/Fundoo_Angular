@@ -13,12 +13,12 @@ export class NotesService {
   private refresh = new Subject<void>();
   constructor(private http: HttpService) { 
 
-    this.token = localStorage.getItem('Token');
-    
+    this.token = localStorage.getItem('Token');  
   }
   getRefreshedData() {
     return this.refresh;
   }
+  
   url = environment.baseUrl;
 
   createNote(data: any): Observable<any> {
@@ -56,14 +56,17 @@ export class NotesService {
     return this.http.postService('/notes/updateNotes',data, true, httpAuthOptions);
   }
 
-  TrashNoteService(data: any){
+  TrashNoteService(data:any){
     let httpAuthOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         'Authorization': this.token
       })
     };
-    return this.http.postService('/notes/trashNotes',data, true, httpAuthOptions);
+    console.log(data);
+    console.log(httpAuthOptions);
+    
+    return this.http.postService('/notes/trashNotes',data,true, httpAuthOptions);
   }
 
   getTrashNoteService(){
@@ -85,5 +88,40 @@ export class NotesService {
       })
     };
     return this.http.postService('/notes/changesColorNotes',data,true, httpAuthOptions);
+  }
+
+  archiveNotes(data:any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    console.log(httpAuthOptions);
+    return this.http.postService('/notes/archiveNotes',data,true, httpAuthOptions);
+          
+  }
+
+  getArchiveNotes(){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+  console.log(httpAuthOptions);
+  
+    return this.http.getService('/notes/getArchiveNotesList',true, httpAuthOptions);
+              
+  }
+
+  foreverdeleteNoteService(data: any){
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.http.postService('/notes/deleteForeverNotes',data, true, httpAuthOptions);
   }
 }
