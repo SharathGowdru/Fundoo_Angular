@@ -1,0 +1,55 @@
+.card{
+    width: 250px;
+    height: 100px;
+    justify-content: center;
+}
+
+.icons{
+    visibility: hidden;
+}
+
+.card:hover .icons{
+    visibility: visible;
+}
+
+.main{
+    outline: none;
+    border: none;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    outline: none;
+}
+
+.notes-description{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.title-top{
+    outline: none;
+    width: 90%;
+    height: 30px;
+    border: none;
+}
+p{
+    color: #202124;
+    cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 17px;
+    font-style: italic;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-top: 24px;
+    padding-bottom: 8px;
+}
