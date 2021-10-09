@@ -1,18 +1,15 @@
     <div class="container">
-        
-            <mat-card class="card"  [style.background]="notes?.color">
+            <mat-card class="card"  [style.background]="data?.color">
                 <div class="main">
                     <div class="title">
-                        <textarea class="title-top" placeholder="Title"  [(ngModel)]="title"></textarea>
+                        <textarea class="title-top" [style.background]="data?.color" placeholder="Title"  [(ngModel)]="title"></textarea>
                     </div>
                     <div class="description">
-                        <textarea placeholder="Take a note..." class="notes-description"  [(ngModel)]="description"></textarea>
+                        <textarea placeholder="Take a note..." [style.background]="data?.color" class="notes-description"  [(ngModel)]="description"></textarea>
                     </div>
                 </div>
                 <div class="icons" style="display: flex; justify-content: space-between;  height: 15%;">
-                  
-                    <app-icons [notecard]="notes"></app-icons>
-
+                    <app-icons [notecard]="data"></app-icons>
                     <div class="close" (click)="updateNotes()">Close</div>
                 </div>
             </mat-card>

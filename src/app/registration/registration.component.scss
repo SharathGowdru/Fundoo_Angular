@@ -18,6 +18,10 @@
     font-size: 15pt;
     font-family: sans-serif;
 }
+.array{
+    display: flex;
+    flex-direction: row; 
+}
 
 .create{
     font-size: 24px;
@@ -242,11 +246,40 @@
 //         margin-top: 350px;
 //     }
 // }
-@media (max-width : 330px){
+@media (max-width : 320px){
     .outer{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 300px;
+        width: 280px;
+    }
+    mat-form-field{
+        width: 250px;
+    }
+}
+@media (max-width : 600px){
+    .outer{
+        width: 500px;
+    }
+    .inner{
+        width: 480px;
+    }
+    .div-form{
+        width: 480px;
+    }
+    .fname{
+        width: 450px;
+    }
+    .lname{
+        width: 450px;
+    }
+    .username{
+        width: 450px;
+    }
+    .m-pword{
+        width: 450px;
+    }
+    .pword{
+        width: 450px;
     }
 }

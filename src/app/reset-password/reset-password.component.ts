@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatSnackBarConfig} from '@angular/material/snack-bar';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-reset-password',
@@ -15,9 +15,7 @@ export class ResetPasswordComponent implements OnInit {
   submitted = false;
   token: any;
  
-
-  constructor(private formBuilder: FormBuilder,
-    public snackBar: MatSnackBar,  private activeRoute: ActivatedRoute,private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, public snackBar: MatSnackBar,  private activeRoute: ActivatedRoute,private user: UserService) { }
   
     openSnackBar(message: string, duration: number) {
       let config = new MatSnackBarConfig();
@@ -26,6 +24,13 @@ export class ResetPasswordComponent implements OnInit {
       }
       this.snackBar.open(message, undefined, config);
     }
+    fontcolors = ['color : #4285F4', 
+                  'color : #EA4335', 
+                  'color : #FBBC05', 
+                  'color : #4285F4', 
+                  'color : #EA4335',
+                  'color : #FBBC05'];
+    fontletters = ['F', 'u', 'n', 'D', 'o', 'o'];
 
   ngOnInit(): void {
     this.resetpassword = this.formBuilder.group({
@@ -50,16 +55,8 @@ export class ResetPasswordComponent implements OnInit {
           this.openSnackBar('Password Reset Successfull', 3000);
         },
         error => {
-          if (error['status'] == 0) {
-            this.openSnackBar('Password Reset Failed: Server Offline', 3000,);
-          }
-          else {
-            this.openSnackBar('Password Reset Failed:', 3000);
-          }
+         console.log("Reser Password failed",error);
         });
+      }
     }
   }
-  reqData(reqData: any) {
-    throw new Error('Method not implemented.');
-  }
-}

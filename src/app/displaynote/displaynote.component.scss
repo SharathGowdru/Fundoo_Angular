@@ -3,19 +3,25 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 5%;
-    justify-content: space-around;
+    margin-top: 3%;
+    // justify-content: space-evenly;
     margin-left: 5%;
-    margin-right: 5%;
+   
 }
-.card {
+.mat-card{
+    margin-right: 20px;
+    height: auto;
+    min-height: 0px;
+}
+.cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-right: 10px;
+    // padding-right: 10px;
     margin-top: 5%;
+    // margin-right: 5%;
     width: 200px;
-    height: 100px;
+    // height: 100px;
     overflow: hidden;
     // visibility: hidden;
 }
@@ -23,7 +29,7 @@
     visibility: hidden;
   
 }
-.card:hover .icons{
+.cards:hover .icons{
     visibility: visible;
 }
 .main{
@@ -32,6 +38,10 @@
     flex-direction: column;
     margin-top: 90px;
 }
+.description{
+    border: none;
+    outline: none;
+}
 .title{
     display: flex;
     flex-direction: row;
@@ -39,30 +49,63 @@
 .pin{
     margin-left: auto;
 }
+.deleteButton{
+    display: flex;
+    justify-content: center;
+}
+
+::ng-deep .mat-menu-panel{
+    min-width: 0px;
+}
+
+.main h1{
+    color: #80868b;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.75rem;
+    left: 0;
+    padding: 30px 15px 0 15px;
+    position: absolute;
+    top: 0;
+}
 // .mat-icon-button{
 //     display: flex;
 //     flex-direction: row;
 //     justify-content: flex-end;
 // }
 @media(max-width : 770px){
-    .card{
+    .cards{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         padding-right: 10px;
         margin-top: 5%;
-        width: 200px;
+        width: 250px;
         height: 100px;
     }
 }
 @media(max-width : 1025px){
-    .card{
+    .cards{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         padding-right: 10px;
         margin-top: 5%;
-        width: 300px;
+        width: 260px;
+        height: 100px;
+    }
+}
+@media only screen and (max-width:362px){
+    .cards{
+        width: 580px;
+        height: 100px;
+    }
+}
+@media only screen and (max-width:420px){
+    .cards{
+        width: 580px;
         height: 100px;
     }
 }

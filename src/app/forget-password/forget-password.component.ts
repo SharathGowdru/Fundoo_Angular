@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Services/user.service';
@@ -24,6 +24,15 @@ export class ForgetPasswordComponent implements OnInit {
   }
   get f() { return this.forgetpassword.controls; }
 
+  fontcolors = ['color : #4285F4', 
+                'color : #EA4335', 
+                'color : #FBBC05', 
+                'color : #4285F4', 
+                'color : #EA4335',
+                'color : #FBBC05'];
+
+  fontletters = ['F', 'u', 'n', 'D', 'o', 'o'];
+
   openSnackBar(message: string, duration: number) {
     let config = new MatSnackBarConfig();
     if (duration != 0) {
@@ -42,13 +51,8 @@ export class ForgetPasswordComponent implements OnInit {
         (response : any) => {
           this.openSnackBar('Password reset link has been sent to your Email', 2000);
         },
-        error => {
-          if (error['status'] == 0) {
-            this.openSnackBar('Sending password reset link failed: Server offline', 2000,);
-          }
-          else {
-            this.openSnackBar('Sending password reset link failed ', 2000);
-          }
+        error => {  
+          console.log("Invalid email",error);
         });
     }
   }

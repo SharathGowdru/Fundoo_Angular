@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditlabelsComponent } from './editlabels.component';
+import { ArchiveiconComponent } from './archiveicon.component';
 
-describe('EditlabelsComponent', () => {
-  let component: EditlabelsComponent;
-  let fixture: ComponentFixture<EditlabelsComponent>;
+describe('ArchiveiconComponent', () => {
+  let component: ArchiveiconComponent;
+  let fixture: ComponentFixture<ArchiveiconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditlabelsComponent ]
+      declarations: [ ArchiveiconComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditlabelsComponent);
+    fixture = TestBed.createComponent(ArchiveiconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

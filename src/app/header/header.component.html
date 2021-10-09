@@ -1,0 +1,96 @@
+<div class="body">
+    <mat-toolbar>
+        <div class="toolbar" style="display: flex">
+            <button mat-icon-button (click)="toggleSidebar()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="logo">
+                <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="">
+                <div class="array">
+                    <div class="headerarray" *ngFor="let fontcolor of fontcolors,let i=index">
+                        <h1 class="headerName" [style]=fontcolor>{{fontletters[i]}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <div class="searchbar">
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+            <input type="text"  placeholder="Search" />
+        </div>
+        <div class="refresh" style="display: flex; align-items: center">
+            <button mat-icon-button>
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="material-icons-outlined">view_agenda</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="settings_outline">settings_outline</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-left: 20px">
+                <mat-icon>apps</mat-icon>
+            </button>
+            <div fxLayout="row" fxLayoutAlign="space-around" ngClass="log-out-icon">
+                <button mat-mini-fab color="" matTooltip="Log Out" mat-icon-button [matMenuTriggerFor]="profile">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+          
+                <mat-menu #profile="matMenu">
+          
+                    <mat-card-header>
+                        <img mat-card-avatar src="https://lh3.googleusercontent.com/ogw/ADea4I7kgKth06_0t6UTrCLxcYslsR9p-7Akdvi-Q-NcdA=s32-c-mo" class="img2" style="margin-left: 35px;">
+                    </mat-card-header>
+                    <button class="next-button" mat-button (click)=logout() style="margin-left: 18px;">
+                        <span>Logout</span>
+                      </button>
+                </mat-menu>
+            </div>
+        </div>
+    </mat-toolbar>
+
+    <mat-divider style="margin-bottom: 10px"></mat-divider>
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" [opened]="opened">
+            <div class="link">
+                <button mat-icon-button routerLink="/dashboard/notes">
+                    <mat-icon>lightbulb_outline</mat-icon>
+                </button>
+                <p routerLink="/dashboard/notes">Notes</p>
+            </div>
+            <div>
+                <button mat-icon-button  routerLink="/dashboard/reminders">
+                    <mat-icon>notifications_none</mat-icon>
+                </button>
+                <p routerLink="/dashboard/reminders">Reminders</p>
+            </div>
+            <div>
+                <button mat-icon-button  routerLink="/dashboard/editlabels">
+                    <mat-icon class="material-icons-outlined">edit</mat-icon>
+                </button>
+                <p routerLink="/dashboard/editlabels">Edit labels</p>
+            </div>
+            <div>
+                <button mat-icon-button  routerLink="/dashboard/archive">
+                    <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
+                </button>
+                <p routerLink="/dashboard/archive">Archive</p>
+            </div>
+            <div>
+                <button mat-icon-button  routerLink="/dashboard/trash">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+                <p  routerLink="/dashboard/trash">Trash</p>
+            </div>  
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+
+

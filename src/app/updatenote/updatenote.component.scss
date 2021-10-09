@@ -12,11 +12,9 @@
 .title{
     display: flex;
     flex-direction: row;
-    // width: 100%;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.5rem;
-    // padding: 0 45px 0 10px;
     outline: none;
 }
 .notes-description{
@@ -32,7 +30,6 @@
     outline: none;
     width: 90%;
     height: 30px;
-    // margin-left: 5px;
     border: none;
 }
 .deleteButton{

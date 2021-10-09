@@ -8,13 +8,15 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-@Input() cardArray : any;
+  @Input() noteArray : any;
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    
   }
-  openDialog(){
-    this.dialog.open(UpdatenoteComponent,);
+  openDialog(notecard: any){
+    console.log(notecard);
+    const dialogRef = this.dialog.open(UpdatenoteComponent,{data:notecard});
   }
 }

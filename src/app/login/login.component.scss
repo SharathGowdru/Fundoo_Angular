@@ -6,7 +6,7 @@
     margin-top: 60px;
     border: 1px solid #DADCE0;
     border-radius: 7px;
-    height: 500px;
+    // height: 500px;
 }
 .inner{
     border: 10px;
@@ -101,21 +101,59 @@
     color: black;
     text-decoration: none;
 }
-@media (max-width : 400px){
-    .outer{
-        margin-top: 0;
-        margin-left: -10px;
-        border: none;
-        width: 290px;
-        justify-content: center;
-    }
-}
+// @media (max-width : 400px){
+//     .outer{
+//         margin-top: 0;
+//         margin-left: -10px;
+//         border: none;
+//         width: 250px;
+//         justify-content: center;
+//     }
+// }
+// @media (max-width : 450px){
+//     .outer{
+//         margin-top: 0;
+//         margin-left: -10px;
+//         border: none;
+//         width: 300px;
+//         justify-content: center;
+//     }
+//     .inner{
+//         margin-top: -5%;
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//     }
+// }
+// @media (max-width : 350px){
+//     .outer{
+//         margin-top: 0;
+//         margin-left: -10px;
+//         border: none;
+//         width: 280px;
+//         justify-content: center;
+//     }
+//     .inner{
+//         margin-top: -8%;
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//     }
+// }
+
+
 @media (max-width : 450px){
     .outer{
-        margin-top: 0;
-        margin-left: -10px;
-        border: none;
-        width: 370px;
-        justify-content: center;
+        width: 300px;
+    }
+}
+@media (max-width : 360px){
+    .outer{
+        width: 300px;
+    }
+}
+@media (max-width : 600px){
+    .body{
+        width: 400px;
     }
 }

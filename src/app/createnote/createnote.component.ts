@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { NotesService } from 'src/app/Services/noteservice.service';
 
 @Component({
@@ -8,12 +8,14 @@ import { NotesService } from 'src/app/Services/noteservice.service';
 })
 
 export class CreatenoteComponent implements OnInit {
+  notes : any;
   viewTitle: boolean = false;
   title : any;
   description : any;
   token: any;
-  
-  constructor(private note: NotesService) { }
+  @Output() noteCreate: EventEmitter<any> = new EventEmitter();
+
+  constructor(private noteservice: NotesService) { }
 
   ngOnInit(): void {
   
@@ -24,29 +26,34 @@ export class CreatenoteComponent implements OnInit {
   }
 
   submit(){
-
+    
     let data = {
       title: this.title,
-      description: this.description,
+      description: this.description
     }
 
-    console.log(data)
+    console.log(data);
+    
     this.token = localStorage.getItem('Token');
     console.log("Added data in", this.token);
     
     if (this.title && this.description) {
-      
-      this.note.createNote(data).subscribe((response) => {
+      this.noteservice.createNote(data).subscribe((response) => {
+
+        this.noteCreate.emit(response);
         console.log(response);
         let message = "note created successfull";
         console.log(message); 
+        
         this.title = "";
-        this.description = "";     
+        this.description = "";   
+        this.viewTitle = false;
       }, error => {
-        console.log("error in register", error);  
+        console.log("Note creation error", error);  
       })
     }
-     else {
+
+    else {
       this.viewTitle = false;
       console.log("Enter some data");
     }

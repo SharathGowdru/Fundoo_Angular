@@ -1,0 +1,54 @@
+<div style="display: flex; justify-content: space-between;  height: 15%;">
+
+    <button mat-icon-button>
+        <mat-icon>add_alert</mat-icon>
+    </button>
+    
+ 
+    <button mat-icon-button>
+        <mat-icon >perm_identity</mat-icon>
+    </button>
+
+
+    <button mat-icon-button [matMenuTriggerFor] = "aboveMenu">
+            <mat-icon>color_lens</mat-icon>
+    </button>
+    <mat-menu #aboveMenu="matMenu" matTooltip="color">
+        <div class="color-pop">
+            <div *ngFor="let color of colors" class="colorButtton">
+                <button mat-mini-fab [style.background]="color?.code" (click)="setColor(color.code)"></button>
+            </div>
+        </div>
+    </mat-menu>
+    
+    <div *ngIf="!notecard?.isArchived" matTooltip="archive">
+        <button mat-icon-button (click)="archiveNote()">
+            <mat-icon >archive</mat-icon>
+        </button>
+    </div>
+    
+    <div *ngIf="notecard?.isArchived" matTooltip="unarchive">
+        <button mat-icon-button (click)="unarchiveNote()">
+            <mat-icon >unarchive</mat-icon>
+        </button>
+    </div>
+
+    <button mat-icon-button [matMenuTriggerFor] = "belowMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">    
+        <div class="deleteButton" mat-stroked-button (click)="trash()">Delete note</div>
+    </mat-menu>
+
+    <div *ngIf="notecard?.isDeleted">
+        
+        <button mat-icon-button (click)="delete()" matTooltip="delete_forever">
+            <mat-icon>delete_forever</mat-icon>
+        </button>
+        
+        <button mat-icon-button (click)="restore()" matTooltip="restore">
+            <mat-icon>restore_from_trash</mat-icon>
+        </button>
+
+    </div>
+</div>

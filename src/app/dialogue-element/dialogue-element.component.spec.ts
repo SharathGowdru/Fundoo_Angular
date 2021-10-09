@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemindersComponent } from './reminders.component';
+import { DialogueElementComponent } from './dialogue-element.component';
 
-describe('RemindersComponent', () => {
-  let component: RemindersComponent;
-  let fixture: ComponentFixture<RemindersComponent>;
+describe('DialogueElementComponent', () => {
+  let component: DialogueElementComponent;
+  let fixture: ComponentFixture<DialogueElementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemindersComponent ]
+      declarations: [ DialogueElementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RemindersComponent);
+    fixture = TestBed.createComponent(DialogueElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

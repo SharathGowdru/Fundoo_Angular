@@ -2,18 +2,10 @@
     <div class="inner">
         <div class="div-form">
             <div class="FunDooNotes">
-                <!-- <div *ngFor= "let value of header">
-                    <div>{{value.letter}}</div>
-                </div> -->
-                <div>
-                    <span class="color-fundoo" style="color:#4285F4">F</span>
-                    <span class="color-fundoo" style="color:#4285F4">un</span>
-                    <span class="color-fundoo" style="color:#EA4335">doo</span>
-                    <span class="color-fundoo" style="color:#FBBC05">n</span>
-                    <span class="color-fundoo" style="color:#4285F4">o</span>
-                    <span class="color-fundoo" style="color:#34A853">t</span>
-                    <span class="color-fundoo" style="color:#EA4335">e</span>
-                    <span class="color-fundoo" style="color:#4285F4">s</span>
+                <div class="array">
+                    <div class="headerarray" *ngFor="let fontcolor of fontcolors,let i=index">
+                        <h1 class="headerName" [style]=fontcolor>{{fontletters[i]}}</h1>
+                    </div>
                 </div>
                 <br>
                 <span class="create">Create your FunDoo Account</span>

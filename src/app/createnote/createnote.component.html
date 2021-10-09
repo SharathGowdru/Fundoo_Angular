@@ -11,46 +11,16 @@
                  image
             </span>      
         </mat-panel-description>
+      
     </div>
   
-    <div class="input-note" (click)=viewFull()>
+    <div class="input-note" (click)="viewFull()">
         <textarea  Placeholder="Take a note..." class="notes-description" [(ngModel)]="description">
         </textarea>
     </div>  
     <div class="card-bottom" id="bottom" *ngIf="viewTitle">
-        
-            <div style="display: flex; justify-content: space-between;  height: 20%;">
-                <!-- Alert icon -->
-                <button mat-icon-button>
-                    <mat-icon>add_alert</mat-icon>
-                </button>
-                
-                <!-- person icon -->
-                <button mat-icon-button>
-                    <mat-icon >perm_identity</mat-icon>
-                </button>
-            
-                <!-- color pallate icon -->
-                <button mat-icon-button>
-                        <mat-icon>color_lens</mat-icon>
-                </button>
-                
-                <!-- insert photo icon -->
-                <button mat-icon-button>
-                    <mat-icon> insert_photo</mat-icon>
-                </button>
-                
-                <!-- archive  icon -->
-                <button mat-icon-button>
-                    <mat-icon >archive</mat-icon>
-                </button>
-            
-                <!-- more icon -->
-                <button mat-icon-button>
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-      
-        </div>
+        <app-icons [notecard]="notes"></app-icons>
+         
         <div class="close" (click)="submit()">Close</div>
     </div>
 </mat-card>
